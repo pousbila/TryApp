@@ -1,0 +1,40 @@
+
+.login-button{
+    background-color: #009960;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s backgroud-color;
+}
+
+.login-button:hover{
+    background-color: #00b393;
+
+}
+
+.navbar-toggler{
+    border: none;
+    font-size: medium;
+}
+
+.navbar-toggler:focus, .button-close:focus{
+    box-shadow: none;
+    outline:none;
+}
+
+.nav-link{
+   color:#666777;
+   font-weight: 500;
+}
+
+.nav-link:hover , .nav-link:active{
+    color:#000;
+
+ }
+
+ .nav-link::before{
+    color:#666777;
+    font-weight: 500;
+ }

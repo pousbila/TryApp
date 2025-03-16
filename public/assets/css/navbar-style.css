@@ -1,0 +1,72 @@
+/* === Bouton de connexion === */
+.login-button {
+    background-color: #009960; /* Couleur de fond verte */
+    color: #fff; /* Texte en blanc */
+    font-size: 14px; /* Taille de la police */
+    padding: 8px 20px; /* Espacement intérieur : 8px en haut/bas et 20px à gauche/droite */
+    border-radius: 50px; /* Bords arrondis pour un effet "pill button" */
+    text-decoration: none; /* Supprime le soulignement (utile si c'est un <a>) */
+    transition: 0.3s background-color; /* Ajoute une transition fluide de 0.3s sur la couleur de fond */
+}
+
+/* Effet au survol du bouton */
+.login-button:hover {
+    background-color: #00b393; /* Change la couleur de fond en vert plus clair */
+}
+
+/* === Bouton du menu burger pour la navigation === */
+.navbar-toggler {
+    border: none; /* Supprime la bordure du bouton */
+    font-size: medium; /* Définit une taille moyenne pour l'icône */
+}
+
+/* Supprime l'effet d'ombre et le contour lorsqu'on clique sur le bouton */
+.navbar-toggler:focus,
+.button-close:focus {
+    box-shadow: none; /* Supprime l'ombre autour */
+    outline: none; /* Supprime le contour bleu par défaut */
+}
+
+/* === Liens de navigation === */
+.nav-link {
+    color: #666777; /* Définit une couleur gris foncé */
+    font-weight: 500; /* Augmente légèrement l'épaisseur du texte */
+    position: relative; /* Nécessaire pour le pseudo-élément qui sert au soulignement animé */
+}
+
+/* Effet au survol et lorsque le lien est actif */
+.nav-link:hover,
+.nav-link:active {
+    color: #000; /* Change la couleur du lien en noir */
+}
+
+/* === Effet de soulignement animé pour les liens (sur grands écrans) === */
+@media (min-width: 991px) {
+    /* Pseudo-élément pour l'effet de soulignement */
+    .nav-link::before {
+        content: ""; /* Crée un élément vide pour servir de barre sous le lien */
+        position: absolute; /* Positionné sous le texte */
+        bottom: 0; /* Aligné en bas du texte */
+        left: 50%; /* Centré horizontalement */
+        transform: translateX(-50%); /* Ajuste la position pour être bien centré */
+        width: 0; /* Largeur initiale de 0 (invisible au départ) */
+        height: 2px; /* Barre fine de 2 pixels */
+        background-color: #009970; /* Couleur verte */
+        visibility: hidden; /* Caché par défaut */
+        transition: 0.5s ease-in-out; /* Animation fluide */
+    }
+
+    /* Effet au survol et lorsque le lien est actif */
+    .nav-link:hover::before,
+    .nav-link:active::before {
+        width: 100%; /* La barre s'étend sur toute la largeur du lien */
+        visibility: visible; /* Devient visible */
+    }
+}
+
+.dropdown-item:hover{
+    color:green;
+    transform: scale(1.2); /*augmente la taille initaial de l'element */
+    padding: 0 auto;
+}
+
