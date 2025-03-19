@@ -13,9 +13,18 @@ Route::get('/about', function () {
 })->name('app_about');
 
 //route pour la page dashbord
-
 Route::match(['get', 'post'], '/dashbord', [HomeController::class,'dashbord'])
+->middleware('auth')
 ->name('app_dashbord');
+
+// Route pour la déconnexion
+Route::get('/logout', [HomeController::class, 'logout'])
+    ->name('app_logout');
+
+// Route pour vérifier l'existence d'un email
+Route::post('/existEmail', [HomeController::class, 'existEmail'])
+    ->name('app_existEmail');
+
 
 //Ces routes sont gerés directement par fortify dans le dossier providers -FortifyProviderServices
 

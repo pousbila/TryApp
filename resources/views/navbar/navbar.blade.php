@@ -33,17 +33,29 @@
   <!--    <a href="" class="login-button">Login</a>   -->
       <!-- Bouton deroulant dropdown -->
         <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Mon compte
-            </button>
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{route('login')}}">Se connecter</a></li>
-            <li><a class="dropdown-item" href="{{route('register')}}">S'inscrire</a></li>
-            </ul>
+                {{-- Quand l'utilisateur n'est pas connecté , j'affiche le dropdown permettant la connexion et deconnexion --}}
+            @guest
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mon compte
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{route('login')}}">Se connecter</a></li>
+                        <li><a class="dropdown-item" href="{{route('register')}}">S'inscrire</a></li>
+                    </ul>
+            @endguest
+            {{-- Quand l'utilsateur est connecté , j'affiche le dropdown de deconnexion! --}}
+            @auth
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{Auth::user()->name}}
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{route('logout')}}">Se déconnecter</a></li>
+                    </ul>
+            @endauth
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button"    data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+        </button>
     </div>
   </nav>
 

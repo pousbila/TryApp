@@ -12,7 +12,7 @@ L
                 <h1 class="text-center text-muted mb-3 mt-5">Register</h1>
                 <p class="text-center text-muted mb-3">Create an account if you don't have one!</p>
 
-                <form method="POST"  action="{{route('register')}}" class="row g-3">
+                <form method="POST"  action="{{route('register')}}" class="row g-3" id="form_register">
                     @csrf
                     <!--Le champ Firstname-->
                     <div class="col-md-6">
@@ -29,7 +29,7 @@ L
                     <!--Le champ Email-->
                     <div class="col-md-12">
                         <label for="email" class="form-label fw-bold"> Email</label>
-                        <input type="email" class="form-control" name="email" id="email" value="{{old('email')}}" required autocomplete="email" autofocus>
+                        <input type="email" class="form-control" name="email" id="email" value="{{old('email')}}" required autocomplete="email" autofocus url-existEmail="{{route('app_existEmail')}}" token="{{csrf_token()}}" >
                         <small class="text-danger fw-bold" id="error_register_email"></small>
                     </div>
                     <!--Le champ Password-->

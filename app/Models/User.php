@@ -18,9 +18,17 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        //Les champs de la table user qui nous seront necessaires!
         'name',
         'email',
         'password',
+        'email_verified_at',
+        'created_at',
+        'updated_at',
+        'is-verified',
+        'activation_code',
+        'activation_token'
+
     ];
 
     /**
